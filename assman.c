@@ -9,10 +9,6 @@
 
 #define BUCKET_COUNT 37
 
-
-static void AssNode_free_siblings(AssNode *);
-static void AssNode_free(AssNode *);
-
 typedef struct
 Asset
 {
@@ -51,6 +47,10 @@ AssMan
 	AssNode *root;
 	AssType *type_buckets[BUCKET_COUNT];
 };
+
+
+static void AssNode_free_siblings(AssNode *);
+static void AssNode_free(AssNode *);
 
 
 static size_t
