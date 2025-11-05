@@ -1,6 +1,6 @@
 CC       = cc
 CFLAGS   = -Wall -Wextra -std=c11 -I..
-BIN_DIR  = ../bin
+BIN_DIR  = bin
 OBJ_DIR  = obj
 
 RAYLIB_LIBS = -lraylib -lm -lpthread -ldl -lrt -lX11

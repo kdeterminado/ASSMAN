@@ -20,9 +20,9 @@ A simple standalone asset manager for games and such. Just copy `assman.h` and `
 
   - `void AssMan_registerFiletype( AssMan *assman, const char *extension, AssLoaderFn loader, AssReleaseFn  releaser)`: Register a file `extension` with `loader` and `releaser` to asset manager `assman`. 
   
-  - `void *AssMan_load( AssMan *assman, const char *path, void *load_data, void *release_data)`: Loads a file from disc if it's not allocated already, otherwise, just returns the currently allocated resource. It will load the file located at `path` using function `loader` with `load_data` as its second argument, and pass to the loaded `Asset` function `releaser` and `release_data` to use later when it needs to be unloaded from memory.
+  - `void *AssMan_load( AssMan *assman, const char *path, const char *key, void *load_data, void *release_data)`: Loads a file from disc if it's not allocated already, otherwise, just returns the currently allocated resource. It will load the file located at `path` using function `loader` with `load_data` as its second argument, and pass to the loaded `Asset` function `releaser` and `release_data` to use later when it needs to be unloaded from memory. `key` must be a unique string.
   
-  - `void  AssMan_release( AssMan *assman, const char *path)`: Releases a resource if it's no longer in use anywhere else, otherwise, it decrements the refcount.
+  - `void  AssMan_release( AssMan *assman, const char *key)`: Releases a resource by 'key'. If it's no longer in use anywhere else, it's freed from memory, otherwise, it decrements the refcount.
 
   - `void  AssMan_clear( AssMan *assman,)`: Clears the entire manager of all assets and registred file types.
   

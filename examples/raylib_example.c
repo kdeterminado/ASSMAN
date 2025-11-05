@@ -29,15 +29,8 @@ main(void)
     printf("Registered filetypes...\n");
     
     // Load assets
-    Texture2D *player_tex = AssMan_load(assman, "res/player.png", NULL, NULL);
-    if (player_tex) {
-        printf("Texture ID: %u, width: %d, height: %d\n", 
-           player_tex->id, player_tex->width, player_tex->height);
-    } else {
-        printf("player_tex is NULL!\n");
-    }
-
-    Model *ship_model     = AssMan_load(assman, "res/ship.obj", NULL, NULL);
+    Texture2D *player_tex = AssMan_load(assman, "res/player.png", "player", NULL, NULL);
+    Model *ship_model     = AssMan_load(assman, "res/ship.obj", "ship", NULL, NULL);
 
     printf("Loaded assets...\n");
     
@@ -53,8 +46,8 @@ main(void)
     printf("Exiting program...\n");
     
     // Release assets
-    AssMan_release(assman, "res/player.png");
-    AssMan_release(assman, "res/ship.obj");
+    AssMan_release(assman, "player");
+    AssMan_release(assman, "ship");
 
     printf("Assets released...\n");
     

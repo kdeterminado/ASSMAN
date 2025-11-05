@@ -54,8 +54,8 @@ main(void)
     AssMan_registerFiletype(assman, ".wav", sdl3_audioLoader, sdl3_audioReleaser);
     
     /* Load assets */
-    SDL_Texture **player_tex = AssMan_load(assman, "player.png", renderer, NULL);
-    SDL_Surface **icon = AssMan_load(assman, "icon.bmp", NULL, NULL);
+    SDL_Texture **player_tex = AssMan_load(assman, "res/player.png", "player", renderer, NULL);
+    SDL_Surface **icon = AssMan_load(assman, "res/icon.bmp", "icon", NULL, NULL);
     
     /* Main loop */
     bool running = true;
@@ -82,8 +82,8 @@ main(void)
     }
     
     /* Release assets */
-    AssMan_release(assman, "player.png");
-    AssMan_release(assman, "icon.bmp");
+    AssMan_release(assman, "player");
+    AssMan_release(assman, "icon");
     
     /* Cleanup */
     AssMan_free(assman);

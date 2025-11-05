@@ -19,10 +19,11 @@ void    AssMan_registerFiletype(
 void   *AssMan_load(
 		AssMan       *assman, 
 		const char   *path, 
+		const char   *key,
 		void         *load_data, 
 		void         *release_data
 	);
-void    AssMan_release(      AssMan *assman, const char *path);
+void    AssMan_release(      AssMan *assman, const char *key);
 void    AssMan_clear(        AssMan *assman);
 void    AssMan_clearAssets(  AssMan *assman);
 void    AssMan_clearRegistry(AssMan *assman);

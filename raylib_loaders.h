@@ -2,6 +2,15 @@
 #define RAYLIB_LOADERS_H
 
 
+typedef struct
+{
+	int 
+		 font_size,
+		*code_points,
+		 code_point_count;
+}
+RaylibFontInfo;
+
 /* Texture loaders */
 void *raylib_textureLoader(  const char *path,  void *data);
 void  raylib_textureReleaser(void       *asset, void *data);
@@ -21,10 +30,6 @@ void  raylib_musicReleaser(void       *asset, void *data);
 /* Shader loaders */
 void *raylib_shaderLoader(  const char *path,  void *data);
 void  raylib_shaderReleaser(void       *asset, void *data);
-
-/* Font loaders */
-void *raylib_fontLoader(  const char *path,  void *data);
-void  raylib_fontReleaser(void       *asset, void *data);
 
 
 	#ifdef RAYLIB_LOADERS_IMPLEMENTATION
@@ -141,10 +146,15 @@ raylib_shaderReleaser(void *asset, void *data)
 void *
 raylib_fontLoader(const char *path, void *data)
 {
-	(void)data;
+	RaylibFontInfo *font_info = (RaylibFontInfo*)data;
 	Font *font = malloc(sizeof(Font));
 	if (!font) return NULL;
-	*font = LoadFont(path);
+	*font = LoadFontEx(
+			path, 
+			font_info->font_size, 
+			font_info->code_points, 
+			font_info->code_point_count
+		);
 	return font;
 }
 

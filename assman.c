@@ -16,6 +16,7 @@ Asset
 {
 	void         *data;
 	void         *release_data;
+	AssReleaseFn  Release;
 	size_t        ref_count;
 }
 Asset;
@@ -95,11 +96,12 @@ strdup_local(const char *s) {
 
 
 static Asset *
-Asset_new(void *data, void *release_data)
+Asset_new(void *data, AssReleaseFn releaser, void *release_data)
 {
 	Asset *asset        = malloc(sizeof(Asset));
 	asset->data         = data;
 	asset->ref_count    = 1;
+	asset->Release      = releaser;
 	asset->release_data = release_data;
 
 	return asset;
@@ -346,14 +348,18 @@ void *
 AssMan_load(
 	AssMan       *assman,
 	const char   *path, 
+	const char   *key,
 	void         *load_data, 
 	void         *release_data
 )
 {
-	const char *ext = strrchr(path, '.'); ext++;
+	const char *lookup_key = key? key : path;
+	
+	const char *ext = strrchr(path, '.'); 
 	if (!ext) {
 		return NULL;
 	}
+	ext++;
 
 	AssType *ass_type = AssMan__findFiletype(assman, ext);
 	if (!ass_type) {
@@ -363,13 +369,14 @@ AssMan_load(
 	if (!assman->root) {
 		Asset *asset     = Asset_new(
 				ass_type->Load(path, load_data),
+				ass_type->Release,
 				release_data
 			);
-		assman->root = AssNode_new(path, asset);
+		assman->root = AssNode_new(lookup_key, asset);
 		return asset->data;
 	}
 
-	AssNode *node = AssNode_walk(assman->root, path);
+	AssNode *node = AssNode_walk(assman->root, lookup_key);
 	if (node && node->asset) {
 		/* Already loaded; increment ref_count */
 		node->asset->ref_count++;
@@ -379,19 +386,20 @@ AssMan_load(
 	/* Node does not exist -- create new asset */
 	Asset *asset = Asset_new(
 			ass_type->Load(path, load_data),
+			ass_type->Release,
 			release_data
 		);
-	AssNode_insert(&assman->root, path, asset);
+	AssNode_insert(&assman->root, lookup_key, asset);
 	return asset->data;
 }
 
 void
-AssMan_release(AssMan *assman, const char *path)
+AssMan_release(AssMan *assman, const char *key)
 {
-	AssType *ass_type = AssMan__findFiletype(assman, path);
+	AssType *ass_type = AssMan__findFiletype(assman, key);
 	if (!ass_type) return;
 	
-	AssNode *node = AssNode_walk(assman->root, path);
+	AssNode *node = AssNode_walk(assman->root, key);
 
 	if (!node) return;
 	if (!node->asset) return;
@@ -401,7 +409,7 @@ AssMan_release(AssMan *assman, const char *path)
 		return;
 	}
 
-	ass_type->Release(node->asset->data, node->asset->release_data);
+	node->asset->Release(node->asset->data, node->asset->release_data);
 	Asset_free(node->asset);
 	node->asset = NULL;
 
